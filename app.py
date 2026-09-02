@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, session, redirect
 import requests
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
 app = Flask(__name__)
@@ -256,13 +257,13 @@ def cadastro():
                     409
                 )
 
-        dados_usuario = {
-            "nome": nome,
-            "email": email,
-            "senha": senha,
-            "serie": serie,
-            "tipo": "aluno"
-        }
+            dados_usuario = {
+        "nome": nome,
+        "email": email,
+        "senha_hash": generate_password_hash(senha),
+        "serie": serie,
+        "tipo": "aluno"
+}
 
         resposta = firebase_post(
             "/usuarios.json",
@@ -344,11 +345,15 @@ def login():
         for id_usuario, usuario in usuarios.items():
 
             if (
-                usuario.get("email") == email
-                and usuario.get("senha") == senha
-                and usuario.get("serie") == serie
-                and usuario.get("tipo") == "aluno"
-            ):
+        usuario.get("email") == email
+        and usuario.get("serie") == serie
+        and usuario.get("tipo") == "aluno"
+        and usuario.get("senha_hash")
+        and check_password_hash(
+            usuario.get("senha_hash"),
+        senha
+    )
+):
 
                 # Guarda os dados básicos da sessão
                 session["usuario"] = {
@@ -440,9 +445,13 @@ def login_professor():
 
             if (
                 usuario.get("email") == email
-                and usuario.get("senha") == senha
                 and usuario.get("tipo") == "professor"
-            ):
+                and usuario.get("senha_hash")
+                and check_password_hash(
+                    usuario.get("senha_hash"),
+                    senha
+    )
+):
 
                 session["usuario"] = {
                     "id": id_usuario,
@@ -542,18 +551,17 @@ def cadastro_professor():
                     409
                 )
 
-        dados_professor = {
-            "nome": nome,
-            "email": email,
-            "senha": senha,
-            "tipo": "professor"
-        }
+        dados_usuario = {
+        "nome": nome,
+        "email": email,
+        "senha_hash": generate_password_hash(senha),
+        "tipo": "professor"
+}
 
         resposta = firebase_post(
             "/usuarios.json",
-            dados_professor
-        )
-
+            dados_usuario
+)
         if resposta.status_code == 200:
 
             return jsonify({
