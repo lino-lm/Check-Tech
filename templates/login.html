@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CheckTech - Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <img
+                src="{{ url_for('static', filename='img/logo.jpeg') }}"
+                alt="CheckTech"
+                class="logo"
+            >
+
+            <h1>Bem-vindo ao CheckTech</h1>
+
+            <p class="subtitle">
+                Entre para realizar a verificação do computador.
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="email">E-mail institucional</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seuemail@al.educacao.sp.gov.br"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="serie">Série</label>
+
+                    <select id="serie" required>
+
+                        <option value="">Selecione sua série</option>
+
+                        <option value="2D1">2D1</option>
+                        <option value="2D2">2D2</option>
+                        <option value="2D3">2D3</option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit" class="primary-button">
+                    Entrar
+                </button>
+
+            </form>
+
+
+            <div id="loginMessage" class="message"></div>
+
+
+            <div class="auth-links">
+
+                <button
+                    type="button"
+                    class="text-button"
+                    onclick="irParaCadastro()"
+                >
+                    Criar uma conta
+                </button>
+
+
+                <span class="divider">ou</span>
+
+
+                <button
+                    type="button"
+                    class="text-button"
+                    onclick="souProfessor()"
+                >
+                    Sou professor
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

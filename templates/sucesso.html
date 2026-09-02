@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CheckTech - Concluído</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>Verificação enviada!</h1>
+
+            <p class="subtitle">
+                A verificação do computador foi registrada com sucesso.
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="voltarInicio()"
+            >
+                Voltar ao início
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

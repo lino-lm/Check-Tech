@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CheckTech - Professor</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body class="professor-login-body">
+
+    <main class="professor-login-container">
+
+        <section class="professor-login-card">
+
+            <div class="professor-login-logo">
+
+                <div class="professor-logo-mark">
+                    ✓
+                </div>
+
+            </div>
+
+            <h1>Área do Professor</h1>
+
+            <p class="professor-login-subtitle">
+                Acesse o Hub do Professor
+            </p>
+
+
+            <form id="professorLoginForm">
+
+                <div class="professor-input-group">
+
+                    <label for="professorEmail">
+                        E-mail institucional
+                    </label>
+
+                    <input
+                        type="email"
+                        id="professorEmail"
+                        placeholder="seu.email@prof.educacao.sp.gov.br"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="professor-input-group">
+
+                    <label for="professorSenha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="professorSenha"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button professor-login-button"
+                >
+                    Entrar no Hub
+                </button>
+
+            </form>
+
+
+            <div class="professor-login-links">
+
+                <button
+                    type="button"
+                    class="text-button"
+                    onclick="irParaCadastroProfessor()"
+                >
+                    Primeiro acesso? Criar conta
+                </button>
+
+                <span class="divider">
+                    ou
+                </span>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    onclick="voltarLogin()"
+                >
+                    ← Voltar para login de aluno
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

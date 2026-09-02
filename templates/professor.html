@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CheckTech - Hub do Professor</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="professor-body">
+
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
+    <aside class="professor-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                ✓
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-menu">
+
+            <button
+                class="sidebar-item active"
+                title="Dashboard"
+            >
+                <span>⌂</span>
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                title="Equipamentos"
+            >
+                <span>▣</span>
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                title="Comentários"
+            >
+                <span>☷</span>
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                title="Configurações"
+            >
+                <span>⚙</span>
+            </button>
+
+        </div>
+
+
+        <button
+            class="sidebar-logout"
+            onclick="logoutProfessor()"
+            title="Sair"
+        >
+            ⇥
+        </button>
+
+    </aside>
+
+
+
+    <!-- ========================================= -->
+    <!-- CONTEÚDO -->
+    <!-- ========================================= -->
+
+    <main class="professor-main">
+
+
+        <!-- HEADER -->
+
+        <header class="professor-header">
+
+            <h1>
+                <strong>Check</strong><span>Tech</span>
+            </h1>
+
+        </header>
+
+
+
+        <!-- ===================================== -->
+        <!-- CARDS SUPERIORES -->
+        <!-- ===================================== -->
+
+        <section class="professor-top-cards">
+
+
+            <!-- PROFESSOR -->
+
+            <div class="teacher-card">
+
+                <div class="teacher-avatar" id="teacherAvatar">
+                    ?
+                </div>
+
+
+                <div class="teacher-info">
+
+                    <h2 id="teacherName">
+                        Professor
+                    </h2>
+
+                    <p>
+                        <span id="teacherEmail">
+                            Área do Professor
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="stat-card stat-blue">
+
+                <span class="stat-title">
+                    Total PCs
+                </span>
+
+                <strong id="totalPcs">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <!-- PROBLEMAS -->
+
+            <div class="stat-card stat-red">
+
+                <span class="stat-title">
+                    Problemas PCs
+                </span>
+
+                <strong id="problemasPcs">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <!-- ÚLTIMA CHECAGEM -->
+
+            <div class="stat-card stat-white">
+
+                <span class="stat-title">
+                    Última Checagem
+                </span>
+
+                <strong id="ultimaChecagem">
+                    --
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- PAINÉIS -->
+        <!-- ===================================== -->
+
+        <section class="professor-panels">
+
+
+            <!-- ================================= -->
+            <!-- EQUIPAMENTOS COM PROBLEMAS -->
+            <!-- ================================= -->
+
+            <div class="professor-panel problems-panel">
+
+                <h2>
+                    EQUIPAMENTOS COM PROBLEMAS
+                </h2>
+
+
+                <div
+                    class="panel-content"
+                    id="problemasContainer"
+                >
+
+                    <div class="panel-empty">
+                        Nenhum problema encontrado.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- COMENTÁRIOS -->
+            <!-- ================================= -->
+
+            <div class="professor-panel comments-panel">
+
+                <h2>
+                    COMENTÁRIOS DOS ALUNOS
+                </h2>
+
+
+                <div
+                    class="panel-content"
+                    id="comentariosContainer"
+                >
+
+                    <div class="panel-empty">
+                        Nenhum comentário registrado.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- ÚLTIMAS VERIFICAÇÕES -->
+            <!-- ================================= -->
+
+            <div class="professor-panel checks-panel">
+
+                <h2>
+                    ÚLTIMAS VERIFICAÇÕES
+                </h2>
+
+
+                <div
+                    class="panel-content"
+                    id="verificacoesContainer"
+                >
+
+                    <div class="panel-empty">
+                        Nenhuma verificação registrada.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

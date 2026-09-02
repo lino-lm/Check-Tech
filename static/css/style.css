@@ -1,0 +1,1545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: #0b0d14;
+
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   CONTAINERS
+========================= */
+
+.auth-container,
+.page-container {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.auth-card,
+.content-card,
+.verification-container {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    background: #121620;
+
+    border: 1px solid #242b3a;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.verification-container {
+
+    max-width: 900px;
+
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    display: block;
+
+    width: 100px;
+
+    max-height: 100px;
+
+    object-fit: contain;
+
+    margin: 0 auto 25px;
+
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+h1 {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #9da5b5;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #cbd1dc;
+
+}
+
+
+.input-group input,
+.input-group select,
+textarea {
+
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+
+    background:
+        linear-gradient(#0d111a, #0d111a) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    padding: 14px 16px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+textarea:focus {
+
+    box-shadow:
+        0 0 15px rgba(108, 99, 255, 0.15);
+
+}
+
+
+.input-group select option {
+
+    background: #121620;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.primary-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.primary-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(108, 99, 255, 0.3);
+
+}
+
+
+.text-button {
+
+    background: none;
+
+    border: none;
+
+    color: #8f87ff;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.auth-links {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.divider {
+
+    color: #555d6e;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.message {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+.message.error {
+
+    color: #ff6b6b;
+
+}
+
+
+.message.success {
+
+    color: #5ee6a8;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.check-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.check-card {
+
+    position: relative;
+
+    background: #0d111a;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    min-height: 150px;
+
+    border: 1px solid transparent;
+
+    background:
+        linear-gradient(#0d111a, #0d111a) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+}
+
+.check-card {
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.check-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(108, 99, 255, 0.12);
+}
+
+.check-card h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.options {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+
+.options label {
+
+    cursor: pointer;
+
+    color: #cbd1dc;
+
+}
+
+
+.options input {
+
+    margin-right: 6px;
+
+}
+
+
+.observation-card {
+
+    min-height: 150px;
+
+}
+
+
+.observation-card textarea {
+
+    width: 100%;
+
+    height: 75px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================
+   SUCESSO
+========================= */
+
+.success-card {
+
+    text-align: center;
+
+}
+
+
+.success-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #1c3b31;
+
+    color: #5ee6a8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 35px;
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 650px) {
+
+    .auth-card,
+    .content-card,
+    .verification-container {
+
+        padding: 25px;
+
+    }
+
+
+    .check-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* =========================
+   ETAPAS
+========================= */
+
+.steps {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin: 10px 0 35px;
+
+}
+
+
+.step {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 90px;
+
+}
+
+
+.step-number {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #1b202d;
+
+    border: 1px solid #353c4d;
+
+    color: #8991a3;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.step span {
+
+    font-size: 12px;
+
+    color: #777f91;
+
+}
+
+
+.step.current .step-number {
+
+    background: #6c63ff;
+
+    border-color: #8b84ff;
+
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(108, 99, 255, 0.35);
+
+}
+
+
+.step.current span {
+
+    color: #ffffff;
+
+}
+
+
+.step.completed .step-number {
+
+    background: #24204a;
+
+    border-color: #6c63ff;
+
+    color: #9b94ff;
+
+}
+
+
+.step.completed span {
+
+    color: #a7a2d8;
+
+}
+
+
+.step-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #303746;
+
+    margin: 0 5px 25px;
+
+}
+
+
+.step-line.active {
+
+    background:
+        linear-gradient(
+            90deg,
+            #6c63ff,
+            #3f8cff
+        );
+
+}
+
+.pc-badge {
+
+    width: fit-content;
+
+    margin: -10px auto 30px;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    background: #181d29;
+
+    border: 1px solid #303747;
+
+    color: #8e96a8;
+
+    font-size: 13px;
+
+}
+
+
+.pc-badge strong {
+
+    color: #ffffff;
+
+    margin-left: 4px;
+
+}
+
+/* ==========================================
+   HUB DO PROFESSOR
+   PADRÃO VISUAL CHECKTECH
+========================================== */
+
+.professor-body {
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    background: #0b0d14;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.professor-sidebar {
+
+    width: 74px;
+
+    min-height: 100vh;
+
+    background: #121620;
+
+    border-right: 1px solid #242b3a;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    z-index: 10;
+}
+
+
+.sidebar-logo {
+
+    width: 100%;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom: 1px solid #242b3a;
+}
+
+
+.sidebar-logo-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        );
+
+    box-shadow:
+        0 0 15px rgba(108, 99, 255, 0.35);
+}
+
+
+.sidebar-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap: 22px;
+
+    padding-top: 25px;
+}
+
+
+.sidebar-item {
+
+    width: 58px;
+    height: 58px;
+
+    border: 1px solid transparent;
+
+    background: transparent;
+
+    color: #8f87ff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition: all 0.2s ease;
+}
+
+
+.sidebar-item:hover,
+.sidebar-item.active {
+
+    color: #ffffff;
+
+    background: #181d29;
+
+    border-color: #303747;
+
+    box-shadow:
+        0 0 15px rgba(108, 99, 255, 0.12);
+}
+
+
+.sidebar-logout {
+
+    margin-top: auto;
+
+    margin-bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid transparent;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #ff6b6b;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.sidebar-logout:hover {
+
+    background: #241419;
+
+    border-color: #ff6b6b;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.professor-main {
+
+    width: calc(100% - 74px);
+
+    margin-left: 74px;
+
+    padding: 25px 30px 40px;
+
+    box-sizing: border-box;
+}
+
+
+.professor-header {
+
+    margin-bottom: 35px;
+}
+
+
+.professor-header h1 {
+
+    margin: 0;
+
+    font-size: 54px;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+}
+
+
+.professor-header h1 strong {
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.professor-header h1 span {
+
+    font-weight: 300;
+
+    color: #9da5b5;
+}
+
+
+/* ==========================================
+   TOP CARDS
+========================================== */
+
+.professor-top-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1.7fr)
+        minmax(160px, 1fr)
+        minmax(160px, 1fr)
+        minmax(190px, 1fr);
+
+    gap: 27px;
+
+    margin-bottom: 54px;
+}
+
+
+.teacher-card,
+.stat-card {
+
+    min-height: 104px;
+
+    box-sizing: border-box;
+
+    border-radius: 15px;
+
+    background: #121620;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.teacher-card {
+
+    padding: 10px 16px;
+
+    border: 1px solid transparent;
+
+    background:
+        linear-gradient(#121620, #121620) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.teacher-avatar {
+
+    width: 74px;
+    height: 74px;
+
+    min-width: 74px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        );
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-right: 15px;
+}
+
+
+.teacher-info h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 25px;
+}
+
+
+.teacher-info p {
+
+    margin: 0;
+
+    color: #9da5b5;
+
+    font-size: 15px;
+}
+
+
+.stat-card {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding: 14px;
+
+    border: 1px solid #303747;
+}
+
+
+.stat-card.stat-blue {
+
+    border-color: #6c63ff;
+}
+
+
+.stat-card.stat-red {
+
+    border-color: #ff6b6b;
+}
+
+
+.stat-card.stat-white {
+
+    border-color: #ffffff;
+}
+
+
+.stat-title {
+
+    font-size: 17px;
+
+    color: #cbd1dc;
+
+    margin-bottom: 5px;
+}
+
+
+.stat-card strong {
+
+    font-size: 28px;
+}
+
+
+.stat-blue strong {
+
+    color: #8f87ff;
+}
+
+
+.stat-red strong {
+
+    color: #ff6b6b;
+}
+
+
+.stat-white strong {
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   PAINÉIS
+========================================== */
+
+.professor-panels {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+
+.professor-panel {
+
+    min-width: 0;
+
+    height: 440px;
+
+    box-sizing: border-box;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(#121620, #121620) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+
+    border: 1px solid transparent;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+.professor-panel h2 {
+
+    margin: 0 0 25px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+.panel-content {
+
+    height: calc(100% - 55px);
+
+    overflow-y: auto;
+
+    padding-right: 4px;
+}
+
+
+.panel-content::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.panel-content::-webkit-scrollbar-thumb {
+
+    background: #6c63ff;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   PROBLEMAS
+========================================== */
+
+.problem-item {
+
+    min-height: 40px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 8px;
+
+    padding: 8px 10px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border: 1px solid #ff6b6b;
+
+    background: #1b151b;
+
+    font-size: 15px;
+}
+
+
+.problem-item:nth-child(odd) {
+
+    border-color: #6c63ff;
+
+    background: #181d29;
+}
+
+
+.problem-pc {
+
+    min-width: 90px;
+
+    font-weight: bold;
+}
+
+
+.problem-description {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   COMENTÁRIOS
+========================================== */
+
+.comment-item {
+
+    border: 1px solid #303747;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #0d111a;
+}
+
+
+.comment-header {
+
+    font-size: 15px;
+
+    color: #8f87ff;
+
+    margin-bottom: 7px;
+}
+
+
+.comment-text {
+
+    font-size: 16px;
+
+    line-height: 1.35;
+
+    color: #cbd1dc;
+}
+
+
+/* ==========================================
+   VERIFICAÇÕES
+========================================== */
+
+.verification-item {
+
+    border: 1px solid #6c63ff;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #0d111a;
+}
+
+
+.verification-item.has-problem {
+
+    border-color: #ff6b6b;
+}
+
+
+.verification-pc {
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+
+.verification-status {
+
+    font-size: 15px;
+
+    color: #cbd1dc;
+}
+
+
+/* ==========================================
+   VAZIO
+========================================== */
+
+.panel-empty {
+
+    padding: 25px 10px;
+
+    text-align: center;
+
+    color: #9da5b5;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   LOGIN DO PROFESSOR
+========================================== */
+
+.professor-login-body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background: #0b0d14;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+.professor-login-container {
+
+    width: 100%;
+
+    max-width: 500px;
+}
+
+
+.professor-login-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #121620;
+
+    border: 1px solid transparent;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(#121620, #121620) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+.professor-login-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+
+.professor-logo-mark {
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        );
+
+    box-shadow:
+        0 0 25px rgba(108, 99, 255, 0.25);
+}
+
+
+.professor-login-card h1 {
+
+    text-align: center;
+
+    margin: 0 0 10px;
+
+    font-size: 28px;
+}
+
+
+.professor-login-subtitle {
+
+    text-align: center;
+
+    color: #9da5b5;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+}
+
+
+.professor-input-group {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+.professor-input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #cbd1dc;
+}
+
+
+.professor-input-group input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid transparent;
+
+    background:
+        linear-gradient(#0d111a, #0d111a) padding-box,
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #3f8cff,
+            #7c4dff
+        ) border-box;
+
+    color: #ffffff;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+.professor-input-group input:focus {
+
+    box-shadow:
+        0 0 15px rgba(108, 99, 255, 0.15);
+}
+
+
+.professor-login-button {
+
+    margin-top: 5px;
+}
+
+
+.professor-login-links {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.cadastro-professor-logo {
+
+    margin: 0 auto 25px;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .professor-top-cards {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .professor-panels {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .professor-sidebar {
+
+        width: 60px;
+    }
+
+
+    .professor-main {
+
+        width: calc(100% - 60px);
+
+        margin-left: 60px;
+
+        padding: 20px 15px;
+    }
+
+
+    .professor-header h1 {
+
+        font-size: 40px;
+    }
+
+
+    .professor-top-cards {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+    }
+
+
+    .professor-panel {
+
+        height: 400px;
+    }
+
+
+    .professor-login-card {
+
+        padding: 25px;
+    }
+
+}

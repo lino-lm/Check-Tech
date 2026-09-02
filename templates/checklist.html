@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CheckTech - Verificação</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <section class="verification-container">
+
+            <img
+                src="{{ url_for('static', filename='img/logo.jpeg') }}"
+                alt="CheckTech"
+                class="logo"
+            >
+
+<div class="steps">
+
+    <div class="step completed">
+        <div class="step-number">✓</div>
+        <span>Computador</span>
+    </div>
+
+    <div class="step-line active"></div>
+
+    <div class="step current">
+        <div class="step-number">2</div>
+        <span>Checklist</span>
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <span>Concluído</span>
+    </div>
+
+</div>
+
+            <h1>Verifique seu computador</h1>
+
+<p class="subtitle">
+    Confira cada item antes de enviar o checklist.
+</p>
+
+<div class="pc-badge">
+    Computador:
+    <strong id="pcSelecionado"></strong>
+</div>
+
+
+            <form id="checklistForm">
+
+
+                <div class="check-grid">
+
+
+                    <div class="check-card">
+
+                        <h3>Notebook</h3>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="notebook"
+                                    value="true"
+                                    required
+                                >
+                                Sim
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="notebook"
+                                    value="false"
+                                >
+                                Não
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-card">
+
+                        <h3>Mouse</h3>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="mouse"
+                                    value="true"
+                                    required
+                                >
+                                Sim
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="mouse"
+                                    value="false"
+                                >
+                                Não
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-card">
+
+                        <h3>Bateria</h3>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="bateria"
+                                    value="true"
+                                    required
+                                >
+                                Sim
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="bateria"
+                                    value="false"
+                                >
+                                Não
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-card">
+
+                        <h3>Carregador</h3>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="carregador"
+                                    value="true"
+                                    required
+                                >
+                                Sim
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="carregador"
+                                    value="false"
+                                >
+                                Não
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-card">
+
+                        <h3>Mouse carregado</h3>
+
+                        <div class="options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="mouse_carregado"
+                                    value="true"
+                                    required
+                                >
+                                Sim
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="mouse_carregado"
+                                    value="false"
+                                >
+                                Não
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-card observation-card">
+
+                        <h3>Observações</h3>
+
+                        <textarea
+                            id="observacoes"
+                            placeholder="Existe algum problema?"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Enviar verificação
+                </button>
+
+
+            </form>
+
+
+            <div id="verificacaoMessage" class="message"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
